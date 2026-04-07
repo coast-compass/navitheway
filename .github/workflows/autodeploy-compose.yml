@@ -1,0 +1,23 @@
+name: Deploy To EC2
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH to EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          script_stop: true # 아래 script 중 실패하는 명령이 하나라도 있으면 실패로 처리
+          script: |
+            cd /home/ubuntu/navitheway/theway
+            git pull origin main
+            chmod +x gradlew
+            ./gradlew clean build -x test
+            sudo fuser -k -n tcp 8080 || true
+            nohup java -jar build/libs/*[^plain].jar > ./output.log 2>&1 &
