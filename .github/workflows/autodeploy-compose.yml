@@ -20,4 +20,4 @@ jobs:
             chmod +x gradlew
             ./gradlew clean build -x test
             sudo fuser -k -n tcp 8080 || true
-            nohup java -jar build/libs/*[^plain].jar > ./output.log 2>&1 &
+            nohup.out java -jar build/libs/*[^plain].jar > ./output.log 2>&1 &
