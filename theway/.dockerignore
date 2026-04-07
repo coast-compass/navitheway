@@ -1,0 +1,9 @@
+build
+.gradle
+.git
+.gitignore
+*.md
+Dockerfile
+docker-compose*
+bin
+out
