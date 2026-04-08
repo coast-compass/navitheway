@@ -1,0 +1,97 @@
+.LockerPage {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #0b1020;
+  color: #e8ecff;
+}
+
+.LockerTopbar {
+  padding: calc(10px + env(safe-area-inset-top, 0px)) 14px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.LockerTitle {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.LockerControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.LockerLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.LockerInput {
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e8ecff;
+  outline: none;
+}
+
+.LockerInput:focus {
+  border-color: rgba(160, 180, 255, 0.5);
+}
+
+.LockerSummary {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.LockerError {
+  padding: 12px 16px;
+  background: rgba(255, 80, 80, 0.12);
+  border-bottom: 1px solid rgba(255, 80, 80, 0.22);
+  color: #ffd6d6;
+  font-size: 13px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.LockerBody {
+  flex: 1;
+  min-height: 320px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.LockerMap {
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+}
+
+@media (max-width: 420px) {
+  .LockerTopbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .LockerControls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .LockerInput {
+    width: 160px;
+  }
+}
+
