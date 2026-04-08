@@ -69,6 +69,10 @@ export default function LockerMapPage() {
         } else if (items.length === 1) {
           map.panTo(new kakao.maps.LatLng(items[0].lat, items[0].lng));
         }
+
+        window.requestAnimationFrame(() => {
+          map.relayout();
+        });
       } catch (e) {
         if (cancelled) return;
         setError(e instanceof Error ? e.message : String(e));
@@ -82,6 +86,21 @@ export default function LockerMapPage() {
       cancelled = true;
     };
   }, [stdgCd]);
+
+  useEffect(() => {
+    function relayoutMap() {
+      if (!mapRef.current) return;
+      mapRef.current.relayout();
+    }
+
+    window.addEventListener('resize', relayoutMap);
+    const timer = window.setTimeout(relayoutMap, 120);
+
+    return () => {
+      window.removeEventListener('resize', relayoutMap);
+      window.clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <div className="LockerPage">

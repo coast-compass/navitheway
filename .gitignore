@@ -16,7 +16,6 @@ gradle.properties
 # Frontend (React)
 # =========================
 frontway/node_modules/
-frontway/node_modules/*
 frontway/.pnp
 frontway/.pnp.js
 frontway/coverage/

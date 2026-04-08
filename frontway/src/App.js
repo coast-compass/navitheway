@@ -1,12 +1,15 @@
 import './App.css';
-import LockerMapPage from './pages/LockerMapPage';
+import LockerMapPage from './pages/LockerMapPage.jsx';
 
 function App() {
   return (
     <div className="AppRoot">
-      <LockerMapPage />
+      <div className="MobileFrame">
+        <LockerMapPage />
+      </div>
     </div>
   );
 }
 
 export default App;
+

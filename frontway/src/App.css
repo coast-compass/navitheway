@@ -1,5 +1,40 @@
 .AppRoot {
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background: radial-gradient(circle at top, #1a2347 0%, #0b1020 48%, #060a16 100%);
   overflow: hidden;
+}
+
+.MobileFrame {
+  width: 390px;
+  height: 844px;
+  max-height: calc(100dvh - 48px);
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.42);
+  background: #0b1020;
+}
+
+@media (max-width: 768px) {
+  .AppRoot {
+    padding: 0;
+    background: #0b1020;
+  }
+
+  .MobileFrame {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+  }
 }

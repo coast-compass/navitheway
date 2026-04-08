@@ -8,7 +8,7 @@
 }
 
 .LockerTopbar {
-  padding: 14px 16px;
+  padding: calc(10px + env(safe-area-inset-top, 0px)) 14px 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
@@ -69,11 +69,29 @@
 
 .LockerBody {
   flex: 1;
-  min-height: 0;
+  min-height: 320px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .LockerMap {
   height: 100%;
   width: 100%;
+  min-height: 100%;
+}
+
+@media (max-width: 420px) {
+  .LockerTopbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .LockerControls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .LockerInput {
+    width: 160px;
+  }
 }
 
