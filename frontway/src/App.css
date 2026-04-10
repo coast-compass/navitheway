@@ -7,7 +7,12 @@
   justify-content: center;
   padding: 24px;
   box-sizing: border-box;
-  background: radial-gradient(circle at top, #1a2347 0%, #0b1020 48%, #060a16 100%);
+  background: radial-gradient(
+    circle at 50% 0%,
+    #eef2ff 0%,
+    #e8ecf5 38%,
+    #dde3f0 100%
+  );
   overflow: hidden;
 }
 
@@ -17,15 +22,17 @@
   max-height: calc(100dvh - 48px);
   border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.42);
-  background: #0b1020;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow:
+    0 4px 6px -1px rgba(15, 23, 42, 0.06),
+    0 24px 48px -12px rgba(15, 23, 42, 0.12);
+  background: #ffffff;
 }
 
 @media (max-width: 768px) {
   .AppRoot {
     padding: 0;
-    background: #0b1020;
+    background: #f0f2f7;
   }
 
   .MobileFrame {
@@ -36,5 +43,6 @@
     border-radius: 0;
     border: 0;
     box-shadow: none;
+    background: #ffffff;
   }
 }
