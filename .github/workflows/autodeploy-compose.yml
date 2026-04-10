@@ -19,5 +19,5 @@ jobs:
             git pull origin main
             chmod +x gradlew
             ./gradlew clean build -x test
-            sudo fuser -k -n tcp 8080 || true
+            sudo fuser -k -n tcp 33006 || true
             nohup java -jar build/libs/*[^plain].jar > ./output.log 2>&1 &
