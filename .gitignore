@@ -11,15 +11,16 @@
 .env.*
 application.properties
 application.yml
-
+gradle.properties
 # =========================
 # Frontend (React)
 # =========================
-frontend/node_modules/
-frontend/.pnp
-frontend/.pnp.js
-frontend/coverage/
-frontend/build/
+frontway/node_modules/
+frontway/.pnp
+frontway/.pnp.js
+frontway/coverage/
+frontway/build/
+frontway/.env
 
 npm-debug.log*
 yarn-debug.log*
@@ -28,12 +29,12 @@ yarn-error.log*
 # =========================
 # Backend (Spring Boot / Gradle)
 # =========================
-backend/build/
-backend/out/
-backend/.gradle/
+theway/build/
+theway/out/
+theway/.gradle/
 
 # gradle wrapper는 포함
-!backend/gradle/wrapper/gradle-wrapper.jar
+!theway/gradle/wrapper/gradle-wrapper.jar
 
 # =========================
 # IDE / Editor
